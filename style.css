@@ -135,3 +135,51 @@ footer {
     display: block;
     margin: 20px auto;
 }
+
+/* ==================== Responsive ==================== */
+
+@media (max-width: 768px) {
+    nav {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .container {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    nav ul li {
+        margin-bottom: 0;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    footer {
+        text-align: center;
+    }
+}
