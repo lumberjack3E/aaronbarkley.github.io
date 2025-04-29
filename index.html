@@ -18,8 +18,8 @@
     <div class="container">   
         <header>
             <img src="https://media.licdn.com/dms/image/v2/D5603AQF2Dq31l1OJRw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1711220802019?e=1751500800&v=beta&t=wNtTOFccr4OT_1pS1QPxAqBu4GctpANN1hWpTs6yKAo" alt="Profile picture" class="profile-pic">
-            <h1>Aaron Barkley</h1>
-            <h2>Cybersecurity Consultant | U.S. Army Veteran | Risk & Threat Specialist</h2>
+            <h1 class="glitch-in">Aaron Barkley</h1>
+            <h2 class="glitch-in" style="animation-delay: 3.4s;">Cybersecurity Consultant | U.S. Army Veteran</h2>
         </header>
 
         <main>
@@ -51,5 +51,37 @@
         </footer>
         
     </div>
+    <div class="glitch-overlay" id="glitchOverlay"></div>
+    <script>
+        function triggerGlitch() {
+            const overlay = document.getElementById('glitchOverlay');
+            const container = document.querySelector('.container');
+
+        // Start both overlay and content glitch
+            overlay.style.animation = 'burstGlitch 2.5s ease-in-out';
+            container.classList.add('glitch-attack');
+
+        // Clean up after 2.5 seconds
+            setTimeout(() => {
+                overlay.style.animation = 'none';
+                container.classList.remove('glitch-attack');
+            }, 2500);
+        }
+
+        // Auto-trigger every 20-40 seconds
+        function randomGlitchLoop() {
+            const delay = Math.random() * 20000 + 20000; // 20–40s
+            setTimeout(() => {
+                triggerGlitch();
+                randomGlitchLoop();
+            }, delay);
+        }
+        randomGlitchLoop(); //start the chaos
+
+        //comment out when finished!
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'g') triggerGlitch();
+        }); //pressing G will trigger glitch
+    </script>
 </body>
 </html>
