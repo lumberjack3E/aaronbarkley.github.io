@@ -1,16 +1,29 @@
+/* ==================== Section Name ==================== */
+
 /* ==================== Global ==================== */
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
     margin: 0;
     padding: 20px;
     background-color: #f5f5f5;
 }
 
 .container {
-    max-width: 1000px;
-    margin: 0 auto;
+    margin-left: 200px;
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ==================== Header ==================== */
@@ -26,40 +39,75 @@ header {
 /* ==================== Main Content ==================== */
 
 main {
-    padding: 20px;
-    margin-bottom: 20px;
+    padding: 40px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 section {
     margin-bottom: 40px;
 }
 
+section h3 {
+    font-size: 24px;
+    color: #002147;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+section p,
+section ul {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333333;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
 /* ==================== Navigation Bar ==================== */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #333;
+    padding-top: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-sizing: border-box;
+}
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    background-color: #333;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 nav ul li a {
     display: block;
-    padding: 14px 20px;
+    padding: 12px 0;
     text-decoration: none;
     color: white;
     font-weight: bold;
+    font-size: 18px;
 }
 
 nav ul li a:hover {
     background-color: #575757;
-    border-radius: 4px;
+    border-radius: 25%;
+    transform: scale(1.05);
+    transition: transform 0.2s ease-in-out;
 }
 
 /* ==================== Footer ==================== */
@@ -68,10 +116,22 @@ footer {
     background: #333333;
     color: #ffffff;
     padding: 20px 0;
+    margin-top: auto;
 }
 
 .footer-container {
     max-width: 1000px;
     margin: 0 auto;
     text-align: center;
+}
+
+/* ==================== Profile Picture ==================== */
+
+.profile-pic {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 25%;
+    display: block;
+    margin: 20px auto;
 }
