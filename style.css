@@ -383,4 +383,39 @@ footer {
   .glitch-attack {
     animation: contentGlitch 1.5s ease-in-out;
   }
-  
+
+/* ==================== Hyperlink Styles ==================== */
+
+a {
+    color: #00ffff;
+    text-decoration: none;
+    border-bottom: 1px dashed #00ffff;
+    transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #39ff14;
+    text-shadow: 0 0 5px #39ff14;
+    border-bottom: 1px solid #39ff14;
+}
+
+/* Terminal-style download button */
+.download-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #00ffff;
+    background-color: rgba(0, 255, 255, 0.1);
+    border: 1px solid #00ffff;
+    border-radius: 4px;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
+}
+
+.download-link:hover {
+    color: #0aff9d;
+    background-color: rgba(0, 255, 127, 0.1);
+    border-color: #0aff9d;
+    text-shadow: 0 0 6px #0aff9d;
+}
