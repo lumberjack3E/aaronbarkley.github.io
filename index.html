@@ -25,7 +25,7 @@
         <main>
             <section id="about">
                 <h3>About Me</h3>
-                <p>Cybersecurity consultant and U.S. Army veteran with a passion for protecting critical systems, reducing risk, and strengthening security postures. Experienced in incident response, threat hunting, system hardening, and risk management.</p>
+                <p id="bio-text">Loading bio...</p>
             </section>
             <section id="projects">
                 <h3>Projects</h3>
@@ -88,5 +88,16 @@
             if (e.key === 'g') triggerGlitch();
         }); //pressing G will trigger glitch
     </script>
+    <script>
+        fetch('bio.txt')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('bio-text').textContent = data;
+            })
+            .catch(error => {
+                console.error('Error loading bio:', error);
+                document.getElementById('bio-text').textContent = "Bio could not be loaded.";
+            });
+    </script>    
 </body>
 </html>
