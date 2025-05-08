@@ -89,7 +89,7 @@
         }); //pressing G will trigger glitch
     </script>
    <script>
-    fetch('bio.html')
+    fetch('bio.js')
         .then(response => response.text())
         .then(data => {
             document.getElementById('bio-text').innerHTML = data;
@@ -98,6 +98,22 @@
             console.error('Error loading bio:', error);
             document.getElementById('bio-text').textContent = "Bio could not be loaded.";
         });
-</script>
+    </script>
+    <script>
+        window.addEventListener('load', () => {
+        const overlay = document.createElement('div');
+        overlay.className = 'glitch-kodak-overlay';
+        document.body.appendChild(overlay);
+    
+        const container = document.querySelector('.container');
+        container.classList.add('kodak-glitch');
+    
+        setTimeout(() => {
+            container.classList.remove('kodak-glitch');
+            document.body.removeChild(overlay);
+        }, 2000);
+        });
+    </script>
+  
 </body>
 </html>
