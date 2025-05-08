@@ -56,38 +56,6 @@
         </footer>
         
     </div>
-    <div class="glitch-overlay" id="glitchOverlay"></div>
-    <script>
-        function triggerGlitch() {
-            const overlay = document.getElementById('glitchOverlay');
-            const container = document.querySelector('.container');
-
-        // Start both overlay and content glitch
-            overlay.style.animation = 'burstGlitch 2.5s ease-in-out';
-            container.classList.add('glitch-attack');
-
-        // Clean up after 2.5 seconds
-            setTimeout(() => {
-                overlay.style.animation = 'none';
-                container.classList.remove('glitch-attack');
-            }, 2500);
-        }
-
-        // Auto-trigger every 20-40 seconds
-        function randomGlitchLoop() {
-            const delay = Math.random() * 20000 + 20000; // 20–40s
-            setTimeout(() => {
-                triggerGlitch();
-                randomGlitchLoop();
-            }, delay);
-        }
-        randomGlitchLoop(); //start the chaos
-
-        //comment out when finished!
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'g') triggerGlitch();
-        }); //pressing G will trigger glitch
-    </script>
    <script>
     fetch('bio.js')
         .then(response => response.text())
