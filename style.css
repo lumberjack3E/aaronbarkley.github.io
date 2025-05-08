@@ -159,10 +159,15 @@ footer {
 
 @media (max-width: 768px) {
     nav {
-        position: relative;
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
         height: auto;
         padding: 10px 0;
+        background-color: #0a0f1c;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.4);
     }
 
     nav ul {
@@ -174,6 +179,7 @@ footer {
     .container {
         margin-left: 0;
         padding: 10px;
+        padding-top: 60px;
     }
 
     header {
