@@ -30,11 +30,13 @@
             <section id="projects">
                 <h3>Projects</h3>
                 <ul>
-                    <li><strong>Resume Compatibility Tool:</strong> Web tool designed to help veterans tailor their resumes for job applications.</li>
-                    <li><strong>Enterprise Wi-Fi Overhaul:</strong> Redesigned and secured a multi-building network infrastructure for a small business.</li>
-                    <li><strong>Incident Response & Threat Hunting Lab:</strong> Built a home lab simulating attacks and defenses.</li>
+                  <li><a href="#" onclick="loadProject('projects/resume-tool.html')">Resume Compatibility Tool</a></li>
+                  <!-- Later we'll add more here -->
                 </ul>
-            </section>
+                <div id="project-details">
+                  <p>Select a project to see more details.</p>
+                </div>
+              </section>              
             <section id="resume">
                 <h3>Resume</h3>
                 <p>You can download my resume here:</p>
@@ -82,6 +84,19 @@
         }, 2000);
         });
     </script>
-  
+    <script>
+        function loadProject(file) {
+          fetch(file)
+            .then(response => response.text())
+            .then(html => {
+              document.getElementById("project-details").innerHTML = html;
+            })
+            .catch(err => {
+              document.getElementById("project-details").innerHTML = "<p>Error loading project.</p>";
+              console.error(err);
+            });
+        }
+      </script>
+      
 </body>
 </html>
