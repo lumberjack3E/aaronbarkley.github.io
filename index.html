@@ -88,16 +88,16 @@
             if (e.key === 'g') triggerGlitch();
         }); //pressing G will trigger glitch
     </script>
-    <script>
-        fetch('bio.txt')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('bio-text').textContent = data;
-            })
-            .catch(error => {
-                console.error('Error loading bio:', error);
-                document.getElementById('bio-text').textContent = "Bio could not be loaded.";
-            });
-    </script>    
+   <script>
+    fetch('bio.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('bio-text').innerHTML = data;
+        })
+        .catch(error => {
+            console.error('Error loading bio:', error);
+            document.getElementById('bio-text').textContent = "Bio could not be loaded.";
+        });
+</script>
 </body>
 </html>
