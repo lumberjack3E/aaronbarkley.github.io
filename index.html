@@ -30,7 +30,7 @@
             <section id="projects">
                 <h3>Projects</h3>
                 <ul>
-                  <li><a href="#" onclick="loadProject('projects/resume-tool.html')">Resume Compatibility Tool</a></li>
+                    <li><a href="#" onclick="event.preventDefault(); loadProject('projects/resume-tool.html');">Resume Compatibility Tool</a></li>
                   <!-- Later we'll add more here -->
                 </ul>
                 <div id="project-details">
@@ -86,6 +86,7 @@
     </script>
     <script>
         function loadProject(file) {
+            console.log("Attempting to load:", file);
           fetch(file)
             .then(response => response.text())
             .then(html => {
